@@ -35,8 +35,6 @@ class ExtendedList(list):
         for i in a_list:
             try:
                 yield float(i)
-            except IndexError:
-                return "index is wrong!"
             except ValueError:
                 return i
 
