@@ -36,7 +36,7 @@ class ExtendedList(list):
             try:
                 yield float(i)
             except ValueError:
-                return i
+                yield i
 
 
 class TypeList(ExtendedList):
@@ -52,10 +52,3 @@ class TypeList(ExtendedList):
     # def __str__(self):
     #     return str(self.the_list)
 
-# connecting to database
-# conn = psycopg2.connect(host="localhost",
-#                             database="",
-#                             user="",
-#                             password="",
-#                             port=5432
-#                             )
