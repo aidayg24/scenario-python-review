@@ -1,6 +1,6 @@
 class ExtendedList(list):
     def __init__(self, the_list):
-        super().__init__()
+        super().__init__(the_list)
         self.the_list = the_list
 
     def __lt__(self, other):  # <
@@ -27,8 +27,8 @@ class ExtendedList(list):
         ans.extend(other.the_list)
         return ans
 
-    def __str__(self):
-        return str(self.the_list)
+    # def __str__(self):
+    #     return str(self.the_list)
 
     @staticmethod
     def next_val(a_list):
@@ -51,5 +51,5 @@ class TypeList(ExtendedList):
     def __ne__(self, other):
         return self.the_list[- 1] != other.the_list[- 1]
 
-    def __str__(self):
-        return str(self.the_list)
+    # def __str__(self):
+    #     return str(self.the_list)
