@@ -32,13 +32,13 @@ class ExtendedList(list):
 
     @staticmethod
     def next_val(a_list):
-        try:
-            for i in a_list:
-                yield int(i)
-        except IndexError:
-            return "index is wrong!"
-        except ValueError:
-            return "this is not an integer!"
+        for i in a_list:
+            try:
+                yield float(i)
+            except IndexError:
+                return "index is wrong!"
+            except ValueError:
+                return i
 
 
 class TypeList(ExtendedList):
@@ -53,3 +53,11 @@ class TypeList(ExtendedList):
 
     # def __str__(self):
     #     return str(self.the_list)
+
+# connecting to database
+# conn = psycopg2.connect(host="localhost",
+#                             database="",
+#                             user="",
+#                             password="",
+#                             port=5432
+#                             )
