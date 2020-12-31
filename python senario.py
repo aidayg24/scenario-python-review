@@ -1,66 +1,25 @@
-class ExtendedList:
+class ExtendedList(list):
     def __init__(self, the_list):
+        super().__init__()
         self.the_list = the_list
 
     def __lt__(self, other):  # <
-        m1, m2 = 0, 0
-        for i in self.the_list:
-            m1 += i
-        for i in other:
-            m2 += i
-        m1 /= len(self.the_list)
-        m2 /= len(other)
-        return m1 < m2
+        return sum(self.the_list) / len(self.the_list) < sum(other.test_list) / len(other.test_list)
 
     def __gt__(self, other):  # >
-        m1, m2 = 0, 0
-        for i in self.the_list:
-            m1 += i
-        for i in other:
-            m2 += i
-        m1 /= len(self.the_list)
-        m2 /= len(other)
-        return m1 > m2
+        return sum(self.the_list) / len(self.the_list) > sum(other.test_list) / len(other.test_list)
 
     def __le__(self, other):  # <=
-        m1, m2 = 0, 0
-        for i in self.the_list:
-            m1 += i
-        for i in other:
-            m2 += i
-        m1 /= len(self.the_list)
-        m2 /= len(other)
-        return m1 <= m2
+        return sum(self.the_list) / len(self.the_list) <= sum(other.test_list) / len(other.test_list)
 
     def __ge__(self, other):  # >=
-        m1, m2 = 0, 0
-        for i in self.the_list:
-            m1 += i
-        for i in other:
-            m2 += i
-        m1 /= len(self.the_list)
-        m2 /= len(other)
-        return m1 >= m2
+        return sum(self.the_list) / len(self.the_list) >= sum(other.test_list) / len(other.test_list)
 
     def __eq__(self, other):  # ==
-        m1, m2 = 0, 0
-        for i in self.the_list:
-            m1 += i
-        for i in other:
-            m2 += i
-        m1 /= len(self.the_list)
-        m2 /= len(other)
-        return m1 == m2
+        return sum(self.the_list) / len(self.the_list) == sum(other.test_list) / len(other.test_list)
 
     def __ne__(self, other):  # !=
-        m1, m2 = 0, 0
-        for i in self.the_list:
-            m1 += i
-        for i in other:
-            m2 += i
-        m1 /= len(self.the_list)
-        m2 /= len(other)
-        return m1 != m2
+        return sum(self.the_list) / len(self.the_list) != sum(other.test_list) / len(other.test_list)
 
     def __add__(self, other):
         return self.the_list.extend(other)
@@ -77,8 +36,11 @@ class ExtendedList:
 
 
 class TypeList(ExtendedList):
+    def __init__(self, the_list):
+        super().__init__(the_list)
+
     def __eq__(self, other):
-        return self.the_list[len(self.the_list) - 1] == other[len(other) - 1]
+        return self.the_list[len(self.the_list) - 1] == other[len(other.the_list) - 1]
 
     def __ne__(self, other):
-        return self.the_list[len(self.the_list) - 1] != other[len(other) - 1]
+        return self.the_list[len(self.the_list) - 1] != other[len(other.the_list) - 1]
