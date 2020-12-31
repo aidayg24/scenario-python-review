@@ -46,7 +46,10 @@ class TypeList(ExtendedList):
         super().__init__(the_list)
 
     def __eq__(self, other):
-        return self.the_list[len(self.the_list) - 1] == other[len(other.the_list) - 1]
+        return self.the_list[- 1] == other.the_list[- 1]
 
     def __ne__(self, other):
-        return self.the_list[len(self.the_list) - 1] != other[len(other.the_list) - 1]
+        return self.the_list[- 1] != other.the_list[- 1]
+
+    def __str__(self):
+        return str(self.the_list)
